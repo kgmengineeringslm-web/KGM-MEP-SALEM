@@ -6,7 +6,21 @@
     <title>KGM MEP Engineering Services | Home</title>
     <style>
         body { font-family: 'Arial', sans-serif; margin: 0; line-height: 1.6; color: #333; }
-        header { background: #003366; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        
+        /* Header Styling */
+        header { 
+            background: #004a99; 
+            color: white; 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
         nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
         nav a:hover { color: #ffcc00; }
         
@@ -24,24 +38,41 @@
             100% { transform: translateX(-66.66%); }
         }
 
-        .welcome-text { text-align: center; padding: 60px 10%; background: #ffffff; }
+        .welcome-text { text-align: center; padding: 60px 10%; background: #ffffff; border-bottom: 1px solid #ddd; }
         
-        /* Fixed "About Us" section with background */
+        /* About Us Section */
         .about-section { 
+            text-align: left; 
             padding: 60px 10%; 
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+            background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.94)), 
                         url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-attachment: fixed;
         }
 
         .section-space { margin-bottom: 40px; }
-        h1, h2 { color: #003366; margin-bottom: 15px; }
+        h1, h2 { color: #004a99; margin-bottom: 15px; text-align: left; }
+
+        /* Founder Image Styling */
+        .founder-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .founder-photo {
+            width: 250px;
+            height: auto;
+            border: 5px solid #004a99;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
         
         ul { list-style: none; padding: 0; }
-        li { background: rgba(0, 51, 102, 0.05); margin: 10px 0; padding: 15px; border-left: 5px solid #003366; font-weight: bold; }
+        li { background: rgba(0, 74, 153, 0.05); margin: 10px 0; padding: 15px; border-left: 5px solid #004a99; font-weight: bold; }
 
-        footer { background: #003366; color: white; text-align: center; padding: 40px 20px; }
+        footer { background: #004a99; color: white; text-align: center; padding: 40px 20px; }
         .footer-details { font-size: 0.95em; line-height: 1.8; margin-top: 15px; }
     </style>
 </head>
@@ -70,7 +101,7 @@
 
 <div class="welcome-text">
     <h2>Welcome to KGM MEP Engineering Services</h2>
-    <p>Led by <strong>Mr. HARIKARAN (Chief Engineer)</strong>, we provide top-tier MEP solutions in Salem[cite: 12]. We ensure safety, quality, and precision in every industrial and residential project[cite: 5, 20].</p>
+    <p>Led by <strong>Mr. HARIKARAN (Chief Engineer)</strong>, we provide top-tier MEP solutions in Salem. We ensure safety, quality, and precision in every industrial and residential project.</p>
 </div>
 
 <div class="about-section">
@@ -78,47 +109,35 @@
     
     <section class="section-space">
         <h2>Our Heritage: A Legacy of Excellence Since 1987</h2>
-        <p>
-           The journey of <strong>KGM MEP Engineering Services</strong> began in <strong>1987</strong> [cite: 2, 3], founded by the visionary <strong>Late Mr. Murugesan Gopal</strong>[cite: 3]. 
-           What started as a dedicated electrical and plumbing service provider soon grew into a household name across <strong>Salem and Yercaud</strong>[cite: 4].
-        </p>
-        <p>
-           Under his leadership, the company specialized in complex <strong>Electrical Motor Repairs</strong> and <strong>Borewell Motor Installations</strong> [cite: 5], becoming a trusted partner for residential and industrial clients alike[cite: 5]. 
-           His deep technical knowledge and commitment to quality laid the foundation for everything we do today[cite: 6].
-        </p>
+        <div class="founder-container">
+            <img src="founder.jpg" alt="Late Mr. Murugesan Gopal" class="founder-photo">
+            <div style="flex: 1; min-width: 300px;">
+                [cite_start]<p>The journey of <strong>KGM MEP Engineering Services</strong> began in <strong>1987</strong> [cite: 3][cite_start], founded by the visionary <strong>Late Mr. Murugesan Gopal</strong>[cite: 3]. [cite_start]What started as a dedicated electrical and plumbing service provider soon grew into a household name across <strong>Salem and Yercaud</strong>[cite: 4].</p>
+                [cite_start]<p>Under his leadership, the company specialized in complex <strong>Electrical Motor Repairs</strong> and <strong>Borewell Motor Installations</strong>[cite: 5]. [cite_start]His deep technical knowledge and commitment to quality laid the foundation for everything we do today[cite: 6].</p>
+            </div>
+        </div>
     </section>
 
     <section class="section-space">
        <h2>Growth and Expansion</h2>
-        <p>
-          In <strong>2009</strong>, the business expanded into the retail sector with the opening of our <strong>Electrical Trade Shops</strong> in <strong>Gorimedu</strong> and <strong>Law College Bus Stop</strong>[cite: 8]. 
-          This venture was successfully managed by Mr. Murugesan alongside his wife, <strong>Mrs. Lakshmi Murugesan</strong> [cite: 9], further strengthening our presence in the local market[cite: 9].
-        </p>
+        [cite_start]<p>In <strong>2009</strong>, the business expanded into the retail sector with the opening of our <strong>Electrical Trade Shops</strong> in <strong>Gorimedu</strong> and <strong>Law College Bus Stop</strong>[cite: 8]. This venture was successfully managed by Mr. Murugesan alongside his wife, <strong>Mrs. [cite_start]Lakshmi Murugesan</strong> [cite: 9][cite_start], further strengthening our presence in the local market[cite: 9].</p>
     </section>
 
     <section class="section-space">
-        <h2>A New Chapter</h2>
-        <p>
-            Following the passing of our founder in <strong>2024</strong>, the company is now headed by <strong>Mrs. Lakshmi Murugesan (Proprietor)</strong>[cite: 11]. 
-            Today, the legacy continues under the expert guidance of <strong>HARIKARAN (Chief Engineer & Manager)</strong>[cite: 12].
-        </p>
-        <p>
-            We have evolved into a full-scale <strong>MEP (Mechanical, Electrical, and Plumbing)</strong> service firm[cite: 13]. 
-            We combine nearly four decades of traditional expertise with modern engineering standards to deliver comprehensive solutions for: [cite: 14]
-        </p>
+        <h2>A New Chapter: KGM MEP Engineering Services</h2>
+        [cite_start]<p>Following the passing of our founder in <strong>2024</strong>[cite: 11], the company is now headed by <strong>Mrs. [cite_start]Lakshmi Murugesan (Proprietor)</strong>[cite: 11]. [cite_start]Today, the legacy continues under the expert guidance of <strong>HARIKARAN (Chief Engineer & Manager)</strong>[cite: 12].</p>
+        [cite_start]<p>We have evolved into a full-scale <strong>MEP (Mechanical, Electrical, and Plumbing)</strong> service firm[cite: 13]. [cite_start]We combine nearly four decades of traditional expertise with modern engineering standards to deliver comprehensive solutions for[cite: 14]:</p>
         <ul>
-            <li>Industrial Electrification & Wiring [cite: 15]</li>
-            <li>Commercial Building Electrical Systems [cite: 16]</li>
-            <li>Advanced Plumbing & Mechanical Installations [cite: 17]</li>
-            <li>Specialized Motor & Borewell Services [cite: 18]</li>
+            [cite_start]<li>Industrial Electrification & Wiring [cite: 15]</li>
+            [cite_start]<li>Commercial Building Electrical Systems [cite: 16]</li>
+            [cite_start]<li>Advanced Plumbing & Mechanical Installations [cite: 17]</li>
+            [cite_start]<li>Specialized Motor & Borewell Services [cite: 18]</li>
         </ul>
     </section>
 
     <section class="section-space">
         <h2>Our Vision</h2>
-        <p>
-            To honor our founder’s legacy by providing <strong>innovative, safe, and sustainable engineering solutions</strong> while maintaining the trust and integrity that has been our hallmark since 1987[cite: 20].
-        </p>
+        [cite_start]<p>To honor our founder’s legacy by providing <strong>innovative, safe, and sustainable engineering solutions</strong> while maintaining the trust and integrity that has been our hallmark since 1987[cite: 20].</p>
     </section>
 </div>
 
