@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | KGM MEP Engineering Services</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        
+        /* Header Styling */
+        header { 
+            background: #004a99; 
+            color: white; 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+        nav a:hover { color: #ffcc00; }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        h1 { color: #004a99; border-left: 5px solid #004a99; padding-left: 15px; margin-bottom: 30px; }
+
+        /* Contact Details Card */
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .info-item { margin-bottom: 25px; }
+        .info-item h3 { color: #004a99; margin-bottom: 5px; }
+        .info-item p { margin: 0; font-size: 1.1em; }
+
+        /* Simple Contact Form */
+        .contact-form {
+            background: #004a99;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .contact-form h2 { margin-top: 0; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .submit-btn {
+            background: #ffcc00;
+            color: #004a99;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+        }
+        .submit-btn:hover { background: #e6b800; }
+
+        footer { background: #004a99; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <span style="font-weight: bold; font-size: 1.2em;">KGM MEP ENGINEERING SERVICES</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="contact-container">
+    <div>
+        <h1>Get In Touch</h1>
+        <p>Whether you need industrial wiring, plumbing solutions, or motor repairs, our team is ready to assist you. Contact us today for a consultation.</p>
+        
+        <div class="info-card">
+            <div class="info-item">
+                <h3>Our Office</h3>
+                <p>168/12.1, Kiruba Complex, Yercaud Main Road,<br>
+                Law College Bus Stop, Salem - 636008.</p>
+            </div>
+            
+            <div class="info-item">
+                <h3>Phone Number</h3>
+                <p><strong>+91 978 643 883</strong></p>
+            </div>
+            
+            <div class="info-item">
+                <h3>Email Address</h3>
+                <p>kgmengineeringslm@gmail.com</p>
+            </div>
+
+            <div class="info-item">
+                <h3>Business Hours</h3>
+                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2>Send us a Message</h2>
+        <form action="#">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label>Service Needed</label>
+                <input type="text" placeholder="e.g., Industrial Wiring, Plumbing" required>
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Tell us about your project"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Inquiry</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 KGM MEP Engineering Services | Led by Lakshmi Murugesan & Hariharan</p>
+</footer>
+
+</body>
+</html>
