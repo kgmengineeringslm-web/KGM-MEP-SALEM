@@ -2,39 +2,150 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | KGM MEP</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; line-height: 1.6; }
-        header { background: #003366; color: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; }
-        .content { padding: 40px 10%; }
-        .service-box { border-left: 5px solid #ffcc00; background: #f9f9f9; padding: 20px; margin-bottom: 20px; }
-        h2 { color: #003366; }
+        body { font-family: 'Arial', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        
+        /* Header */
+        header { 
+            background: #003366; 
+            color: white; 
+            padding: 15px 5%; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        .logo { display: flex; align-items: center; }
+        nav { margin-top: 10px; } 
+        nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; font-size: 14px; }
+
+        /* Content Area */
+        .content { padding: 40px 10%; } 
+        h2 { color: #003366; font-size: 28px; border-bottom: 3px solid #ffcc00; display: inline-block; margin-bottom: 30px; }
+        
+        /* Service Grid */
+        .services-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .service-box { 
+            background: #fff; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            transition: transform 0.3s;
+        }
+
+        .service-box:hover { transform: translateY(-5px); }
+
+        /* Service Images Style */
+        .service-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* This keeps images perfectly cropped */
+            display: block;
+        }
+
+        .service-info { padding: 20px; }
+        .service-info h3 { color: #003366; margin-top: 0; font-size: 20px; }
+        .service-info p { font-size: 14px; color: #666; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            nav { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
+            nav a { margin: 5px 10px; font-size: 13px; }
+            .content { padding: 20px 5%; }
+            .logo span { font-size: 14px; }
+        }
+
+        /* Mobile Call Button */
+        .call-btn {
+            display: block; background: #28a745; color: white; text-align: center;
+            padding: 15px; text-decoration: none; font-weight: bold;
+            position: fixed; bottom: 0; width: 100%; z-index: 2000;
+        }
+        @media (min-width: 601px) { .call-btn { display: none; } }
     </style>
 </head>
 <body>
+
 <header>
     <div class="logo">
-    <img src="logo.png" alt="KGM MEP Logo" style="height: 50px; vertical-align: middle;">
-    <span style="margin-left: 10px;">KGM MEP ENGINEERING SERVICES</span>
-</div>
-    <nav><a href="index.html">HOME</a> <a href="services.html">SERVICES</a> <a href="projects.html">PROJECTS</a><a href="contact.html">CONTACT AS</a></nav>
+        <img src="logo.png" alt="KGM MEP Logo" style="height: 40px;">
+        <span style="margin-left: 10px; font-weight: bold;">KGM MEP ENGINEERING SERVICES</span>
+    </div>
+    <nav>
+        <a href="index.html">HOME</a> 
+        <a href="services.html">SERVICES</a> 
+        <a href="projects.html">PROJECTS</a>
+        <a href="contact.html">CONTACT US</a>
+    </nav>
 </header>
 
 <div class="content">
-    <h2>Our Specializations</h2>
-    <div class="service-box">
-        <h3>Electrical Services</h3>
-        <p>Industrial wiring, control panel setup, and commercial/residential electrification with safety testing.</p>
-    </div>
-    <div class="service-box">
-        <h3>Plumbing Services</h3>
-        <p>Installation of high-pressure water systems, industrial drainage, and residential sanitary works.</p>
-    </div>
-    <div class="service-box">
-        <h3>Mechanical Services</h3>
-        <p>Industrial machinery maintenance and structural fabrication works.</p>
+    <h2>Our Specialized Services</h2>
+    
+    <div class="services-container">
+        <div class="service-box">
+            <img src="solar.jpg" alt="Solar Installation" class="service-img">
+            <div class="service-info">
+                <h3>Solar Installation</h3>
+                <p>Complete solar panel setup for residential and industrial rooftops to save energy costs.</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="industrial.jpg" alt="Industrial Wiring" class="service-img">
+            <div class="service-info">
+                <h3>Industrial Wiring</h3>
+                <p>Heavy-duty electrical wiring, control panel installations, and machinery power setups.</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="villa.jpg" alt="Villa Wiring" class="service-img">
+            <div class="service-info">
+                <h3>Villa & Residential Wiring</h3>
+                <p>Premium electrical solutions for luxury villas, including smart home networking.</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="school.jpg" alt="School Building Wiring" class="service-img">
+            <div class="service-info">
+                <h3>School Building Wiring</h3>
+                <p>Safe and organized electrical networking for educational institutions and labs.</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="plumbing.jpg" alt="Plumbing Work" class="service-img">
+            <div class="service-info">
+                <h3>Plumbing Works</h3>
+                <p>Comprehensive plumbing services, from high-pressure systems to drainage.</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <img src="firesafety.jpg" alt="Fire Safety" class="service-img">
+            <div class="service-info">
+                <h3>Fire Safety</h3>
+                <p>Installation of fire alarms, sprinkler systems, and safety sensors.</p>
+            </div>
+        </div>
     </div>
 </div>
+
+<a href="tel:+91978643883" class="call-btn">CALL US NOW: 978 643 883</a>
+
 </body>
 </html>
