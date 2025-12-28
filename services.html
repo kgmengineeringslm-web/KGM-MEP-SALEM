@@ -34,6 +34,7 @@
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 25px; 
+            margin-bottom: 50px;
         }
 
         .service-box { 
@@ -41,22 +42,37 @@
             border-radius: 8px; 
             overflow: hidden; 
             box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            transition: transform 0.3s;
         }
 
-        .service-box:hover { transform: translateY(-5px); }
-
-        /* Service Images Style */
-        .service-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover; /* This keeps images perfectly cropped */
-            display: block;
-        }
-
+        .service-img { width: 100%; height: 200px; object-fit: cover; display: block; }
         .service-info { padding: 20px; }
         .service-info h3 { color: #003366; margin-top: 0; font-size: 20px; }
-        .service-info p { font-size: 14px; color: #666; }
+
+        /* Staff Details Section */
+        .staff-section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-top: 5px solid #28a745;
+        }
+
+        .staff-section h2 { color: #28a745; border-bottom: 3px solid #28a745; }
+
+        .staff-list {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2e7d32; /* Dark green matching your image text */
+        }
+
+        .staff-list li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
 
         /* Mobile Adjustments */
         @media (max-width: 600px) {
@@ -64,7 +80,7 @@
             nav { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
             nav a { margin: 5px 10px; font-size: 13px; }
             .content { padding: 20px 5%; }
-            .logo span { font-size: 14px; }
+            .staff-list li { font-size: 16px; flex-direction: column; }
         }
 
         /* Mobile Call Button */
@@ -96,52 +112,25 @@
     
     <div class="services-container">
         <div class="service-box">
-            <img src="solar.jpg" alt="Solar Installation" class="service-img">
-            <div class="service-info">
-                <h3>Solar Installation</h3>
-                <p>Complete solar panel setup for residential and industrial rooftops to save energy costs.</p>
-            </div>
+            <img src="solar.jpg" alt="Solar" class="service-img">
+            <div class="service-info"><h3>Solar Installation</h3></div>
+        </div>
+        <div class="service-box">
+            <img src="industrial.jpg" alt="Industrial" class="service-img">
+            <div class="service-info"><h3>Industrial Wiring</h3></div>
+        </div>
         </div>
 
-        <div class="service-box">
-            <img src="industrial.jpg" alt="Industrial Wiring" class="service-img">
-            <div class="service-info">
-                <h3>Industrial Wiring</h3>
-                <p>Heavy-duty electrical wiring, control panel installations, and machinery power setups.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <img src="villa.jpg" alt="Villa Wiring" class="service-img">
-            <div class="service-info">
-                <h3>Villa & Residential Wiring</h3>
-                <p>Premium electrical solutions for luxury villas, including smart home networking.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <img src="school.jpg" alt="School Building Wiring" class="service-img">
-            <div class="service-info">
-                <h3>School Building Wiring</h3>
-                <p>Safe and organized electrical networking for educational institutions and labs.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <img src="plumbing.jpg" alt="Plumbing Work" class="service-img">
-            <div class="service-info">
-                <h3>Plumbing Works</h3>
-                <p>Comprehensive plumbing services, from high-pressure systems to drainage.</p>
-            </div>
-        </div>
-
-        <div class="service-box">
-            <img src="firesafety.jpg" alt="Fire Safety" class="service-img">
-            <div class="service-info">
-                <h3>Fire Safety</h3>
-                <p>Installation of fire alarms, sprinkler systems, and safety sensors.</p>
-            </div>
-        </div>
+    <div class="staff-section">
+        <h2>STAFF DETAILS</h2>
+        <ul class="staff-list">
+            <li><span>A LICENSED ENGINEERS</span> <span>1 no</span></li>
+            <li><span>ENGINEERS</span> <span>2 nos</span></li>
+            <li><span>SUPERVISOR</span> <span>3 nos</span></li>
+            <li><span>SKILLED LABOUR</span> <span>10 nos</span></li>
+            <li><span>SEMI SKILLED LABOUR</span> <span>15 nos</span></li>
+            <li><span>MAN POWER ON CONTRACTOR BASICS</span> <span>UPTO +25 nos</span></li>
+        </ul>
     </div>
 </div>
 
