@@ -3,149 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | KGM MEP</title>
+    <title>Our Services | KGM MEP Engineering</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        /* --- COPYING CORE STYLES FROM HOME PAGE --- */
+        :root {
+            --primary-color: #004a99;
+            --secondary-color: #ffb700;
+            --dark-text: #333333;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Header */
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            line-height: 1.7; 
+            color: var(--dark-text); 
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--primary-color); }
+
+        /* HEADER */
         header { 
-            background: #003366; 
-            color: white; 
+            background: linear-gradient(90deg, #003366 0%, #004a99 100%);
+            color: var(--white); 
             padding: 15px 5%; 
             display: flex; 
-            flex-wrap: wrap; 
             justify-content: space-between; 
             align-items: center; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-
-        .logo { display: flex; align-items: center; }
-        nav { margin-top: 10px; } 
-        nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; font-size: 14px; }
-
-        /* Content Area */
-        .content { padding: 40px 10%; } 
-        h2 { color: #003366; font-size: 28px; border-bottom: 3px solid #ffcc00; display: inline-block; margin-bottom: 30px; }
         
-        /* Service Grid */
-        .services-container { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 55px; background: white; padding: 2px; border-radius: 4px; }
+        .logo span { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; }
+
+        nav { display: flex; gap: 30px; }
+        nav a { 
+            color: var(--white); text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; position: relative;
+        }
+        nav a:hover { color: var(--secondary-color); }
+
+        /* --- PAGE HEADER (HERO) --- */
+        .page-header {
+            background: linear-gradient(rgba(0, 74, 153, 0.8), rgba(0, 74, 153, 0.8)), 
+                        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        .page-header h1 { color: white; font-size: 3rem; margin-bottom: 10px; }
+        .page-header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+        /* --- SERVICES GRID SECTION --- */
+        .services-section { padding: 60px 5%; max-width: 1300px; margin: 0 auto; }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .service-box { 
-            background: #fff; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-            transition: transform 0.3s;
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 4px solid transparent;
         }
 
-        .service-box:hover { transform: translateY(-5px); }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 74, 153, 0.2);
+            border-bottom: 4px solid var(--secondary-color);
+        }
 
-        /* Service Images Style */
-        .service-img {
+        .card-image {
+            height: 220px;
             width: 100%;
-            height: 200px;
-            object-fit: cover; /* This keeps images perfectly cropped */
-            display: block;
+            overflow: hidden;
+            position: relative;
         }
 
-        .service-info { padding: 20px; }
-        .service-info h3 { color: #003366; margin-top: 0; font-size: 20px; }
-        .service-info p { font-size: 14px; color: #666; }
-
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            header { flex-direction: column; text-align: center; }
-            nav { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
-            nav a { margin: 5px 10px; font-size: 13px; }
-            .content { padding: 20px 5%; }
-            .logo span { font-size: 14px; }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
         }
+        
+        .service-card:hover .card-image img { transform: scale(1.1); }
 
-        /* Mobile Call Button */
-        .call-btn {
-            display: block; background: #28a745; color: white; text-align: center;
-            padding: 15px; text-decoration: none; font-weight: bold;
-            position: fixed; bottom: 0; width: 100%; z-index: 2000;
+        .card-content { padding: 25px; }
+        .card-content h3 { font-size: 1.5rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .card-content h3 i { color: var(--secondary-color); font-size: 1.2rem; }
+        .card-content p { color: #666; font-size: 0.95rem; margin-bottom: 20px; }
+        
+        .btn-small {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
         }
-        @media (min-width: 601px) { .call-btn { display: none; } }
+        .btn-small:hover { color: var(--secondary-color); text-decoration: underline; }
+
+        /* FOOTER (Same as Index) */
+        footer { background: #002a55; color: #dbe4ee; padding: 60px 0 30px; text-align: center; margin-top: 50px; }
+        .copyright { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .page-header h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="KGM MEP Logo" style="height: 40px;">
-        <span style="margin-left: 10px; font-weight: bold;">KGM MEP ENGINEERING SERVICES</span>
-    </div>
-    <nav>
-        <a href="index.html">HOME</a> 
-        <a href="services.html">SERVICES</a> 
-        <a href="projects.html">PROJECTS</a>
-        <a href="contact.html">CONTACT US</a>
-    </nav>
-</header>
-
-<div class="content">
-    <h2>Our Specialized Services</h2>
-    
-    <div class="services-container">
-        <div class="service-box">
-            <img src="solar.jpg" alt="Solar Installation" class="service-img">
-            <div class="service-info">
-                <h3>Solar Installation</h3>
-                <p>Complete solar panel setup for residential and industrial rooftops to save energy costs.</p>
-            </div>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="KGM Logo">
+            <span>KGM MEP Services</span>
         </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html" style="color: var(--secondary-color);">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
 
-        <div class="service-box">
-            <img src="industrial.jpg" alt="Industrial Wiring" class="service-img">
-            <div class="service-info">
-                <h3>Industrial Wiring</h3>
-                <p>Heavy-duty electrical wiring, control panel installations, and machinery power setups.</p>
+    <section class="page-header">
+        <h1>Our Expertise</h1>
+        <p>Comprehensive Electrical, Plumbing, and Mechanical Solutions for Industrial, Commercial, and Residential Needs.</p>
+    </section>
+
+    <section class="services-section">
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Solar Installation">
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-solar-panel"></i> Solar Installation</h3>
+                    <p>Complete solar panel setup for residential and industrial rooftops to save energy costs. We handle structure, panels, and inverters.</p>
+                    <a href="contact.html" class="btn-small">Get Quote &rarr;</a>
+                </div>
             </div>
-        </div>
 
-        <div class="service-box">
-            <img src="villa.jpg" alt="Villa Wiring" class="service-img">
-            <div class="service-info">
-                <h3>Villa & Residential Wiring</h3>
-                <p>Premium electrical solutions for luxury villas, including smart home networking.</p>
+            <div class="service-card">
+                <div class="card-image">
+                     <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=800&q=80" alt="Industrial Wiring">
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-industry"></i> Industrial Wiring</h3>
+                    <p>Heavy-duty electrical wiring, control panel installations, cable tray laying, and machinery power setups for factories.</p>
+                    <a href="contact.html" class="btn-small">Get Quote &rarr;</a>
+                </div>
             </div>
-        </div>
 
-        <div class="service-box">
-            <img src="school.jpg" alt="School Building Wiring" class="service-img">
-            <div class="service-info">
-                <h3>School Building Wiring</h3>
-                <p>Safe and organized electrical networking for educational institutions and labs.</p>
+            <div class="service-card">
+                <div class="card-image">
+                     <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="Villa Wiring">
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-home"></i> Residential & Villa</h3>
+                    <p>Premium electrical solutions for luxury villas. Includes conduit piping, DB dressing, and smart home automation.</p>
+                    <a href="contact.html" class="btn-small">Get Quote &rarr;</a>
+                </div>
             </div>
-        </div>
 
-        <div class="service-box">
-            <img src="plumbing.jpg" alt="Plumbing Work" class="service-img">
-            <div class="service-info">
-                <h3>Plumbing Works</h3>
-                <p>Comprehensive plumbing services, from high-pressure systems to drainage.</p>
+            <div class="service-card">
+                <div class="card-image">
+                     <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="Commercial Wiring">
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-building"></i> Commercial & School</h3>
+                    <p>Safe and organized electrical networking for educational institutions, labs, and office complexes.</p>
+                    <a href="contact.html" class="btn-small">Get Quote &rarr;</a>
+                </div>
             </div>
-        </div>
 
-        <div class="service-box">
-            <img src="firesafety.jpg" alt="Fire Safety" class="service-img">
-            <div class="service-info">
-                <h3>Fire Safety</h3>
-                <p>Installation of fire alarms, sprinkler systems, and safety sensors.</p>
+            <div class="service-card">
+                <div class="card-image">
+                     <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="Plumbing Work">
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-faucet"></i> Plumbing Works</h3>
+                    <p>Comprehensive plumbing services, from high-pressure lines and motor installation to drainage and sanitary fitting.</p>
+                    <a href="contact.html" class="btn-small">Get Quote &rarr;</a>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
-<a href="tel:+91978643883" class="call-btn">CALL US NOW: 978 643 883</a>
+            <div class="service-card">
+                <div class="card-image">
+                     <img src="https://plus.unsplash.com/premium_photo-1661907425879-170461f38e3a?auto=format&fit=crop&w=800&q=80" alt="Fire Safety">
+                </div>
+                <div class="card-content">
+                    <h3><i class="fas fa-fire-extinguisher"></i> Fire Safety</h3>
+                    <p>Installation of fire alarms, sprinkler systems, hydrants, and safety sensors to ensure building compliance.</p>
+                    <a href="contact.html" class="btn-small">Get Quote &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h3>KGM MEP Engineering Services</h3>
+        <p>168/12.1, Kiruba Complex, Yercaud Main Road, Salem.</p>
+        <p>Email: kgmengineeringslm@gmail.com</p>
+        <div class="copyright">
+            &copy; 2026 KGM MEP Engineering Services. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919786433883?text=I want to enquire about your services" class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
