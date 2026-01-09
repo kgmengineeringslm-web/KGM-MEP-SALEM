@@ -3,14 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | KGM MEP Engineering Services</title>
+    <title>Contact Us | KGM MEP ENGINEERING SERVICS</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        /* --- CORE STYLES --- */
+        :root {
+            --primary-color: #004a99; /* Royal Blue */
+            --secondary-color: #ffb700; /* Engineering Gold */
+            --dark-text: #333333;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* Header Styling */
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            line-height: 1.7; 
+            color: var(--dark-text); 
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--primary-color); }
+
+        /* HEADER */
         header { 
-            background: #004a99; 
-            color: white; 
+            background: linear-gradient(90deg, #003366 0%, #004a99 100%);
+            color: var(--white); 
             padding: 15px 5%; 
             display: flex; 
             justify-content: space-between; 
@@ -18,140 +43,203 @@
             position: sticky; 
             top: 0; 
             z-index: 1000; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-        nav a { color: white; margin-left: 20px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
-        nav a:hover { color: #ffcc00; }
+        
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 55px; background: white; padding: 2px; border-radius: 4px; }
+        .logo span { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; }
 
-        .contact-container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        nav { display: flex; gap: 30px; }
+        nav a { 
+            color: var(--white); text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; position: relative;
         }
+        nav a:hover { color: var(--secondary-color); }
 
-        h1 { color: #004a99; border-left: 5px solid #004a99; padding-left: 15px; margin-bottom: 30px; }
-
-        /* Contact Details Card */
-        .info-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .info-item { margin-bottom: 25px; }
-        .info-item h3 { color: #004a99; margin-bottom: 5px; }
-        .info-item p { margin: 0; font-size: 1.1em; }
-
-        /* Simple Contact Form */
-        .contact-form {
-            background: #004a99;
+        /* --- HERO BANNER --- */
+        .page-header {
+            background: linear-gradient(rgba(0, 74, 153, 0.9), rgba(0, 74, 153, 0.8)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
             color: white;
-            padding: 30px;
+        }
+        .page-header h1 { color: white; font-size: 3rem; margin-bottom: 10px; }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; }
+
+        /* --- CONTACT CONTAINER --- */
+        .contact-container {
+            max-width: 1200px;
+            margin: -50px auto 50px; /* Overlap effect */
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* CONTACT INFO BOX (Left) */
+        .contact-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px;
             border-radius: 10px;
+            box-shadow: var(--shadow);
         }
-        .contact-form h2 { margin-top: 0; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
+        .contact-info h3 { color: var(--secondary-color); margin-bottom: 20px; font-size: 1.5rem; }
+        .contact-info p { margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; }
+        .contact-info i { color: var(--secondary-color); font-size: 1.2rem; margin-top: 5px; }
+        
+        .social-links { margin-top: 40px; }
+        .social-links a {
+            display: inline-flex; width: 40px; height: 40px; background: rgba(255,255,255,0.1); color: white;
+            align-items: center; justify-content: center; border-radius: 50%; margin-right: 10px; text-decoration: none; transition: 0.3s;
         }
+        .social-links a:hover { background: var(--secondary-color); color: var(--primary-color); }
+
+        /* CONTACT FORM (Right) */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        .contact-form h3 { margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #555; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 1rem;
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); }
+        
         .submit-btn {
-            background: #ffcc00;
-            color: #004a99;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1em;
+            background: var(--secondary-color); color: #002244; border: none; padding: 15px 30px;
+            font-weight: 700; text-transform: uppercase; cursor: pointer; border-radius: 50px; transition: 0.3s; display: inline-block; width: 100%;
         }
-        .submit-btn:hover { background: #e6b800; }
+        .submit-btn:hover { background: #ffcc33; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 183, 0, 0.4); }
 
-        footer { background: #004a99; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+        /* MAP SECTION */
+        .map-section { width: 100%; height: 400px; margin-top: 50px; background: #ddd; }
 
+        /* FOOTER */
+        footer { background: #002a55; color: #dbe4ee; padding: 60px 0 30px; text-align: center; }
+        .copyright { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
+
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .contact-container { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 15px; }
+            nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .contact-container { grid-template-columns: 1fr; margin-top: 30px; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="KGM MEP Logo" style="height: 50px; vertical-align: middle;">
-        <span style="margin-left: 10px; font-weight: bold; font-size: 1.2em;">KGM MEP ENGINEERING SERVICES</span>
-    </div>
-    <nav>
-       <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">CONTACT AS</a>
-    </nav>
-</header>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="KGM Logo">
+            <span>KGM MEP Services</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html" style="color: var(--secondary-color);">Contact Us</a>
+        </nav>
+    </header>
 
-<div class="contact-container">
-    <div>
+    <section class="page-header">
         <h1>Get In Touch</h1>
-        <p>Whether you need industrial wiring, plumbing solutions, or motor repairs, our team is ready to assist you. Contact us today for a consultation.</p>
-        
-        <div class="info-card">
-            <div class="info-item">
-                <h3>Our Office</h3>
-                <p>168/12.1, Kiruba Complex, Yercaud Main Road,<br>
-                Law College Bus Stop, Salem - 636008.</p>
-            </div>
-            
-            <div class="info-item">
-                <h3>Phone Number</h3>
-                <p><strong>+91 978 643 883</strong></p>
-            </div>
-            
-            <div class="info-item">
-                <h3>Email Address</h3>
-                <p>kgmengineeringslm@gmail.com</p>
-            </div>
+        <p>Whether you need industrial wiring, plumbing solutions, or motor repairs, our team is ready to assist you.</p>
+    </section>
 
-            <div class="info-item">
-                <h3>Business Hours</h3>
-                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+    <div class="contact-container">
+        
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 
+                <span>168/12.1, Kiruba Complex,<br>Yercaud Main Road, Law College Bus Stop,<br>Salem - 636008.</span>
+            </p>
+            <p><i class="fas fa-phone-alt"></i> <span>+91 978 643 883</span></p>
+            <p><i class="fas fa-envelope"></i> <span>kgmengineeringslm@gmail.com</span></p>
+            <p><i class="fas fa-clock"></i> <span>Mon - Sat: 9:00 AM - 7:00 PM</span></p>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
+
+        <div class="contact-form">
+            <h3>Send Enquiry to KGM Engineering</h3>
+            
+            <form action="https://formspree.io/f/xkoowoak" method="POST">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="Enter your mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="Enter your email id" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Service Interested In</label>
+                    <select name="service">
+                        <option>Industrial Electrification</option>
+                        <option>Commercial Wiring</option>
+                        <option>Plumbing Works</option>
+                        <option>Fire Safety Installation</option>
+                        <option>Borewell Motor Erection</option>
+                        <option>Other / General Enquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea name="message" rows="4" placeholder="Tell us about your project requirements..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Enquiry via Email</button>
+            </form>
+        </div>
+
     </div>
 
-    <div class="contact-form">
-        <h2>Send us a Message</h2>
-        <form action="#">
-            <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="Enter your phone number" required>
-            </div>
-            <div class="form-group">
-                <label>Service Needed</label>
-                <input type="text" placeholder="e.g., Industrial Wiring, Plumbing" required>
-            </div>
-            <div class="form-group">
-                <label>Message</label>
-                <textarea rows="5" placeholder="Tell us about your project"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Inquiry</button>
-        </form>
+    <div class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62447.88285559868!2d78.11894220794348!3d11.664325000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf0619a8689c1%3A0x3675f9226cb4a49!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1704870000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
     </div>
-</div>
 
-<footer>
-    <p>&copy; 2025 KGM MEP Engineering Services | Led by Lakshmi Murugesan & Hariharan</p>
-</footer>
+    <footer>
+        <h3>KGM MEP Engineering Services</h3>
+        <p>168/12.1, Kiruba Complex, Yercaud Main Road, Salem.</p>
+        <p>Email: kgmengineeringslm@gmail.com</p>
+        <div class="copyright">
+            &copy; 2026 KGM MEP Engineering Services. All Rights Reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919786433883?text=Hello, I want to discuss a project." class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
