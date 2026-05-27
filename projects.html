@@ -25,7 +25,7 @@
         
         body { 
             font-family: 'Open Sans', sans-serif; 
-            line-height: 1.7; 
+            line-height: 1.6; 
             color: var(--dark-text); 
             background-color: var(--light-bg);
         }
@@ -56,7 +56,7 @@
         }
         nav a:hover { color: var(--secondary-color); }
 
-        /* --- HERO BANNER --- */
+        /* HERO BANNER */
         .page-header {
             background: linear-gradient(rgba(0, 74, 153, 0.9), rgba(0, 74, 153, 0.8)), 
                         url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
@@ -69,79 +69,73 @@
         .page-header h1 { color: white; font-size: 3rem; margin-bottom: 10px; }
         .page-header p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
 
-        /* --- PROJECT SECTION --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        /* PORTFOLIO SECTION */
+        .container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
         
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+        /* JS FILTER BUTTONS */
+        .filter-container { text-align: center; margin-bottom: 50px; }
+        .filter-btn {
+            background: transparent; border: 2px solid var(--primary-color);
+            color: var(--primary-color); padding: 8px 20px; margin: 5px;
+            border-radius: 30px; font-family: 'Montserrat', sans-serif;
+            font-weight: 600; cursor: pointer; transition: all 0.3s ease;
         }
-        .section-title h2 { font-size: 2.2rem; margin-bottom: 15px; }
-        .section-title::after {
-            content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 0 auto;
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color); color: var(--white);
         }
 
         /* GRID LAYOUT */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-bottom: 80px;
         }
 
+        /* PROJECT CARD */
         .project-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border-top: 5px solid var(--primary-color);
-            transition: transform 0.3s;
-            position: relative;
+            background: var(--white); border-radius: 12px; overflow: hidden;
+            box-shadow: var(--shadow); transition: transform 0.3s, opacity 0.4s ease;
+            position: relative; display: block;
         }
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
 
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        /* IMAGE STYLE */
+        .project-image { width: 100%; height: 220px; overflow: hidden; position: relative; }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .project-card:hover .project-image img { transform: scale(1.1); }
 
-        .card-content { padding: 25px; }
-        
+        /* BADGES */
         .status-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
+            position: absolute; top: 15px; right: 15px; padding: 5px 12px;
+            border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; z-index: 2;
         }
-        .status-ongoing { background: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
-        .status-completed { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .status-ongoing { background: #ffb700; color: #002244; }
+        .status-completed { background: #25d366; color: #fff; }
 
-        .project-type {
-            color: var(--secondary-color);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: block;
+        .category-tag {
+            position: absolute; bottom: 15px; left: 15px; background: rgba(0, 74, 153, 0.9);
+            color: white; padding: 4px 10px; font-size: 0.8rem; border-radius: 4px; font-weight: 600; z-index: 2;
         }
 
-        .card-content h3 { font-size: 1.4rem; margin-bottom: 15px; line-height: 1.3; }
-        .card-content p { font-size: 0.95rem; color: #666; margin-bottom: 15px; }
+        /* CONTENT STYLE */
+        .card-content { padding: 25px; }
+        .card-content h3 { font-size: 1.3rem; margin-bottom: 10px; line-height: 1.3; }
+        .card-content p { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
         
         .client-name {
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-            font-size: 0.9rem;
-            color: #555;
-            font-weight: 600;
+            border-top: 1px solid #eee; padding-top: 15px; font-size: 0.85rem; color: #555; font-weight: 600;
         }
         .client-name i { color: var(--primary-color); margin-right: 8px; }
 
-        /* FOOTER (Same as Index) */
+        /* FOOTER */
         footer { background: #002a55; color: #dbe4ee; padding: 60px 0 30px; text-align: center; }
         .copyright { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+        }
     </style>
 </head>
 <body>
@@ -151,13 +145,13 @@
             <img src="logo.png" alt="KGM Logo">
             <span>KGM MEP ENGINEERING SERVICES</span>
         </div>
-      <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="booking.html" style="color: var(--secondary-color);">Book Service</a>
-    <a href="contact.html">Contact Us</a>
-</nav>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html" style="color: var(--secondary-color);">Projects</a>
+            <a href="booking.html">Book Service</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
 
     <section class="page-header">
@@ -167,155 +161,160 @@
 
     <div class="container">
 
-        <div class="section-title">
-            <h2>Currently In Progress</h2>
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterSelection('all')">All Projects</button>
+            <button class="filter-btn" onclick="filterSelection('industrial')">Industrial</button>
+            <button class="filter-btn" onclick="filterSelection('commercial')">Commercial & Education</button>
+            <button class="filter-btn" onclick="filterSelection('residential')">Residential</button>
+            <button class="filter-btn" onclick="filterSelection('special')">Specialized MEP</button>
         </div>
-        
+
         <div class="project-grid">
-            
-            <div class="project-card">
+
+            <div class="project-card filterDiv commercial special">
                 <span class="status-badge status-ongoing">Ongoing</span>
+                <div class="project-image">
+                    <span class="category-tag">Resort / Hospitality</span>
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Resort MEP">
+                </div>
                 <div class="card-content">
-                    <span class="project-type">Resort / Hospitality</span>
                     <h3>Top View Resort, Yercaud</h3>
                     <p>Leading complete electrical consultation, full electrical installations, and comprehensive plumbing work for this luxury hill resort.</p>
                     <div class="client-name"><i class="fas fa-hard-hat"></i> Client: Direct Consultation</div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card filterDiv industrial">
                 <span class="status-badge status-ongoing">Ongoing</span>
+                <div class="project-image">
+                    <span class="category-tag">Industrial SIPCOT</span>
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=800&q=80" alt="Industrial Substation">
+                </div>
                 <div class="card-content">
-                    <span class="project-type">Industrial SIPCOT</span>
                     <h3>Vellore SIPCOT Project</h3>
-                    <p>High-tension transformer erection, cable tray installation, cable laying, and industrial wiring execution.</p>
+                    <p>High-tension transformer erection, heavy cable tray installation, cable laying, and industrial wiring execution.</p>
                     <div class="client-name"><i class="fas fa-building"></i> Client: Naxso BBT Pvt Ltd</div>
                 </div>
             </div>
 
-        </div>
-
-        <div class="section-title">
-            <h2>Recent Success Stories</h2>
-        </div>
-
-        <div class="project-grid">
-
-            <div class="project-card">
+            <div class="project-card filterDiv residential">
                 <span class="status-badge status-completed">Completed</span>
+                <div class="project-image">
+                    <span class="category-tag">Residential / Villa</span>
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa">
+                </div>
                 <div class="card-content">
-                    <span class="project-type">Residential / Villa</span>
                     <h3>Drizzle Homes, Yercaud</h3>
-                    <p>Successful completion of comprehensive Electrical and Plumbing works for this premium residential project in Yercaud.</p>
+                    <p>Successful completion of comprehensive Electrical and Plumbing works for this premium residential villa project.</p>
                     <div class="client-name"><i class="fas fa-home"></i> Client: Drizzle Homes</div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <span class="status-badge status-completed">Completed</span>
-                <div class="card-content">
-                    <span class="project-type">Commercial & HVAC</span>
-                    <h3>Pandiyan Marriage Hall</h3>
-                    <p>Executed comprehensive Electrical wiring and HVAC (Air Conditioning) system installation for the entire function hall.</p>
-                    <div class="client-name"><i class="fas fa-fan"></i> Client: Pandiyan Hall</div>
-                </div>
-            </div>
-
-            <div class="project-card">
+            <div class="project-card filterDiv industrial">
                 <span class="status-badge status-completed">Completed 2024</span>
-                <div class="card-content">
-                    <span class="project-type">Telecommunications</span>
-                    <h3>BSNL Tower & Solar Project</h3>
-                    <p>Installation of solar panels and critical tower equipment infrastructure to ensure uninterrupted connectivity.</p>
-                    <div class="client-name"><i class="fas fa-signal"></i> Client: Murugayasv Pvt Ltd</div>
+                <div class="project-image">
+                    <span class="category-tag">Industrial Cable Work</span>
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Industrial Cabling">
                 </div>
-            </div>
-
-            <div class="project-card">
-                <span class="status-badge status-completed">Completed 2024</span>
                 <div class="card-content">
-                    <span class="project-type">Industrial Cable Work</span>
                     <h3>Naga Limited - Dual Units</h3>
                     <p>Executed major industrial electrical cable works across two large-scale manufacturing units in Dindigul & Arupukottai.</p>
                     <div class="client-name"><i class="fas fa-industry"></i> Client: Naga Limited</div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <span class="status-badge status-completed">Completed</span>
-                <div class="card-content">
-                    <span class="project-type">Residential Apartments</span>
-                    <h3>AK Builders Projects</h3>
-                    <p>Successful completion of full electrical systems for <strong>2 Major Apartment Complexes</strong> under AK Builders.</p>
-                    <div class="client-name"><i class="fas fa-building"></i> Client: AK Builders</div>
+            <div class="project-card filterDiv commercial">
+                <span class="status-badge status-completed">Completed 2022</span>
+                <div class="project-image">
+                    <span class="category-tag">Educational MEP</span>
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80" alt="School Infrastructure">
                 </div>
-            </div>
-
-        </div>
-
-        <div class="section-title">
-            <h2>Major Portfolio & Achievements</h2>
-        </div>
-
-        <div class="project-grid">
-
-            <div class="project-card">
                 <div class="card-content">
-                    <span class="project-type">Residential & Housing</span>
-                    <h3>15+ Individual Homes</h3>
-                    <p>Complete electrical wiring and plumbing solutions delivered for over 15 luxury individual homes across Salem.</p>
-                    <div class="client-name"><i class="fas fa-home"></i> Location: Around Salem</div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-content">
-                    <span class="project-type">Apartment MEP</span>
-                    <h3>Siva Apartments, NGGO Colony</h3>
-                    <p>Comprehensive Electrical and Plumbing installation works completed successfully.</p>
-                    <div class="client-name"><i class="fas fa-building"></i> Client: Siva Apartments</div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-content">
-                    <span class="project-type">Specialized Service</span>
-                    <h3>Borewell Motor Erection</h3>
-                    <p>Expert installation and erection of heavy-duty borewell motors at numerous sites across Salem district.</p>
-                    <div class="client-name"><i class="fas fa-water"></i> Client: Multiple Sites</div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-content">
-                    <span class="project-type">Consultancy</span>
-                    <h3>Official Electrical Consultant</h3>
-                    <p>Serving as the trusted technical consultant for major regional engineering firms.</p>
-                    <div class="client-name"><i class="fas fa-briefcase"></i> RK Engineers (Salem) & Simple Truss</div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-content">
-                    <span class="project-type">Educational</span>
                     <h3>Senthil Public School</h3>
-                    <p>Admin office of services execution (2022) in Krishnagiri.</p>
-                    <p>matric school block (2022) in Krishnagiri.</p>
+                    <p>Complete MEP execution for Admin office block and Matric School block ensuring safety standards in Krishnagiri.</p>
                     <div class="client-name"><i class="fas fa-university"></i> Client: Chendur Construction</div>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card filterDiv commercial special">
+                <span class="status-badge status-completed">Completed</span>
+                <div class="project-image">
+                    <span class="category-tag">Commercial & HVAC</span>
+                    <img src="https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&w=800&q=80" alt="Function Hall">
+                </div>
                 <div class="card-content">
-                    <span class="project-type">Warehousing</span>
+                    <h3>Pandiyan Marriage Hall</h3>
+                    <p>Executed comprehensive Electrical wiring and HVAC (Centralized Air Conditioning) system installation for the entire function hall.</p>
+                    <div class="client-name"><i class="fas fa-fan"></i> Client: Pandiyan Hall</div>
+                </div>
+            </div>
+
+            <div class="project-card filterDiv industrial">
+                <span class="status-badge status-completed">Completed 2023</span>
+                <div class="project-image">
+                    <span class="category-tag">Warehousing MEP</span>
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Warehouse Setup">
+                </div>
+                <div class="card-content">
                     <h3>Manak Steel, Bangalore</h3>
-                    <p>Large-scale warehouse MEP services in Neelamangala (2023).</p>
+                    <p>Large-scale warehouse lighting, high-bay setups, and complete electrical services executed perfectly in Neelamangala.</p>
                     <div class="client-name"><i class="fas fa-warehouse"></i> Client: Manak Steel</div>
                 </div>
             </div>
 
-        </div>
+            <div class="project-card filterDiv special">
+                <span class="status-badge status-completed">Completed 2024</span>
+                <div class="project-image">
+                    <span class="category-tag">Telecom & Solar</span>
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Solar Towers">
+                </div>
+                <div class="card-content">
+                    <h3>BSNL Tower & Solar Project</h3>
+                    <p>Installation of solar panels and critical tower equipment infrastructure to ensure uninterrupted network connectivity.</p>
+                    <div class="client-name"><i class="fas fa-signal"></i> Client: Murugayasv Pvt Ltd</div>
+                </div>
+            </div>
 
+            <div class="project-card filterDiv residential">
+                <span class="status-badge status-completed">Completed</span>
+                <div class="project-image">
+                    <span class="category-tag">Residential Apartments</span>
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Apartment Complex">
+                </div>
+                <div class="card-content">
+                    <h3>AK Builders Projects</h3>
+                    <p>Successful completion of full electrical and safety systems for 2 Major multi-story apartment complexes.</p>
+                    <div class="client-name"><i class="fas fa-building"></i> Client: AK Builders</div>
+                </div>
+            </div>
+
+            <div class="project-card filterDiv residential">
+                <span class="status-badge status-completed">Completed</span>
+                <div class="project-image">
+                    <span class="category-tag">Housing & Flats</span>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Independent Homes">
+                </div>
+                <div class="card-content">
+                    <h3>15+ Homes & Siva Apartments</h3>
+                    <p>Complete electrical and plumbing solutions delivered for Siva Apartments (NGGO Colony) and over 15 luxury individual homes.</p>
+                    <div class="client-name"><i class="fas fa-map-marker-alt"></i> Location: Salem District</div>
+                </div>
+            </div>
+
+            <div class="project-card filterDiv special">
+                <span class="status-badge status-ongoing">Ongoing</span>
+                <div class="project-image">
+                    <span class="category-tag">Specialized Service</span>
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Plumbing and Borewell">
+                </div>
+                <div class="card-content">
+                    <h3>Borewell Motors & Consultancy</h3>
+                    <p>Expert erection of heavy-duty borewell motors. Also serving as official Electrical Consultant for RK Engineers & Simple Truss.</p>
+                    <div class="client-name"><i class="fas fa-water"></i> Client: Multiple Sites & Firms</div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <footer>
@@ -327,9 +326,42 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919786433883?text=Hello Hariharan, I saw your projects on your website and want to enquire about your services." class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+    <a href="https://wa.me/919786433883?text=Hello Hariharan, I saw your projects on your website and want to enquire about your services." class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 100;">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            
+            for (i = 0; i < x.length; i++) {
+                // முதலில் எல்லாவற்றையும் மறைக்கிறோம்
+                x[i].style.display = "none";
+                x[i].style.opacity = "0";
+                
+                // கேட்டகிரி மேட்ச் ஆனால் காட்டுகிறோம்
+                if (x[i].className.indexOf(c) > -1) {
+                    x[i].style.display = "block";
+                    // சிறிய அனிமேஷனுக்காக
+                    setTimeout((function(el) {
+                        return function() {
+                            el.style.opacity = "1";
+                        }
+                    })(x[i]), 50);
+                }
+            }
+
+            // பட்டன் கலர் மாறுவதற்கு (Active class)
+            var btns = document.getElementsByClassName("filter-btn");
+            for (i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("active");
+            }
+            event.currentTarget.classList.add("active");
+        }
+    </script>
 
 </body>
 </html>
